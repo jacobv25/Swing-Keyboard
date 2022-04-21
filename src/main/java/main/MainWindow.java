@@ -8,8 +8,7 @@ import javax.swing.*;
 public class MainWindow extends JFrame {
 
     public MainWindow() throws MidiUnavailableException {
-//        setSize(1000,800);
-//        realtimePlayer = new RealtimePlayer();
+
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         add(new KeyboardPanel());
         setVisible(true);
@@ -17,15 +16,14 @@ public class MainWindow extends JFrame {
     }
 
     public static void main(String[] args) throws MidiUnavailableException {
-//        SwingUtilities.invokeLater(
-//                () -> {
-//                    try {
-//                        new MainWindow();
-//                    } catch (MidiUnavailableException e) {
-//                        e.printStackTrace();
-//                    }
-//                }
-//        );
-        new MainWindow();
+        SwingUtilities.invokeLater(
+                () -> {
+                    try {
+                        new MainWindow();
+                    } catch (MidiUnavailableException e) {
+                        e.printStackTrace();
+                    }
+                }
+        );
     }
 }
