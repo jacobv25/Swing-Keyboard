@@ -1,5 +1,6 @@
 package main;
 
+import org.jfugue.pattern.Pattern;
 import org.jfugue.realtime.RealtimePlayer;
 import org.jfugue.theory.Note;
 
@@ -20,8 +21,12 @@ public class DMS_RealtimePlayer {
         return instance;
     }
 
-    public static void startNote(Note note){
+    public void startNote(Note note){
         player.startNote(note);
+    }
+
+    public void play(Pattern pattern){
+        player.play(pattern);
     }
 
 }

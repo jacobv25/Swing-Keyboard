@@ -1,0 +1,13 @@
+C z
+C# s
+D x
+D# d
+E c
+F v
+F# g
+G b
+G# h
+A n
+A# j
+B m
+C6 ,
