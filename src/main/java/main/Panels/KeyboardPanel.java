@@ -1,7 +1,7 @@
 package main.Panels;
 
-import main.Keys.BlackKey;
-import main.Keys.WhiteKey;
+import main.Buttons.Keys.BlackKey;
+import main.Buttons.Keys.WhiteKey;
 
 import javax.sound.midi.MidiUnavailableException;
 import javax.swing.*;

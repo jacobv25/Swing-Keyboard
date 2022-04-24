@@ -1,4 +1,4 @@
-package main.Keys;
+package main.Buttons.Keys;
 
 import javax.sound.midi.MidiUnavailableException;
 import java.awt.*;

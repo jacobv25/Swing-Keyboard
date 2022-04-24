@@ -1,4 +1,4 @@
-package main.Keys;
+package main.Buttons.Keys;
 
 import main.DMS_RealtimePlayer;
 import main.Panels.NoteRecordSheetPanel;
