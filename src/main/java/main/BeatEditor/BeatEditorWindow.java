@@ -1,10 +1,7 @@
-package main;
-
-import main.Panels.BeatEditorButtonsPanel;
+package main.BeatEditor;
 
 import javax.swing.*;
 import java.awt.*;
-import java.net.NoRouteToHostException;
 
 import static java.awt.BorderLayout.CENTER;
 import static java.awt.BorderLayout.NORTH;

@@ -1,6 +1,5 @@
-package main.Panels;
+package main.BeatEditor;
 
-import main.BeatEditor;
 import main.Buttons.DMS_Button;
 
 import javax.swing.*;
