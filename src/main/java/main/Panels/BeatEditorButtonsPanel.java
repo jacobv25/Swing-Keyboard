@@ -4,6 +4,7 @@ import main.BeatEditor;
 import main.Buttons.DMS_Button;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class BeatEditorButtonsPanel extends JPanel {
     DMS_Button play;
@@ -13,6 +14,10 @@ public class BeatEditorButtonsPanel extends JPanel {
     public BeatEditorButtonsPanel(){
         play = new DMS_Button("Play");
         stop = new DMS_Button("Stop");
-        addBeat = new DMS_Button("Add Beat/Bassline");
+        addBeat = new DMS_Button("Add Beat");
+        setLayout(new FlowLayout());
+        add(play);
+        add(stop);
+        add(addBeat);
     }
 }
