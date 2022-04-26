@@ -17,7 +17,6 @@ public class PianoRoll extends JFrame {
     int i;
 
     public PianoRoll() throws InterruptedException {
-//        i=0;
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new GridLayout(4, 16));
         slider = new JSlider(0, 100, 0);
@@ -29,25 +28,23 @@ public class PianoRoll extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 slider.setValue(0);
                 // Runs outside of the Swing UI thread
-                new Thread(new Runnable() {
-                    public void run() {
-                        while(true){
-                            // Runs inside of the Swing UI thread
-                            SwingUtilities.invokeLater(new Runnable() {
-                                public void run() {
-                                    if (slider.getValue() < slider.getMaximum()) {
-                                        slider.setValue(slider.getValue() + 1);
-                                    } else {
-                                        slider.setValue(0);
-                                    }
+                new Thread(() -> {
+                    while(true){
+                        // Runs inside of the Swing UI thread
+                        SwingUtilities.invokeLater(new Runnable() {
+                            public void run() {
+                                if (slider.getValue() < slider.getMaximum()) {
+                                    slider.setValue(slider.getValue() + 1);
+                                } else {
+                                    slider.setValue(0);
                                 }
-                            });
-
-                            try {
-                                java.lang.Thread.sleep(100);
                             }
-                            catch(Exception e) { }
+                        });
+
+                        try {
+                            Thread.sleep(100);
                         }
+                        catch(Exception e1) { }
                     }
                 }).start();
             }

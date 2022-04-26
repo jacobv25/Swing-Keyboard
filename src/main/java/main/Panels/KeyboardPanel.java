@@ -1,16 +1,17 @@
 package main.Panels;
 
 import main.Buttons.Keys.BlackKey;
+import main.Buttons.Keys.KeyboardKey;
 import main.Buttons.Keys.WhiteKey;
 
 import javax.sound.midi.MidiUnavailableException;
 import javax.swing.*;
 
 public class KeyboardPanel extends JPanel {
-    WhiteKey cKey;
-    BlackKey cSharpKey;
-    WhiteKey dKey;
-    BlackKey dSharpKey;
+    KeyboardKey cKey;
+    KeyboardKey cSharpKey;
+    KeyboardKey dKey;
+    KeyboardKey dSharpKey;
 
     NoteRecordSheetPanel recordSheetPanel;
 
