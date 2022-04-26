@@ -18,7 +18,7 @@ public class KeyBoardButtonsPanel extends JPanel {
         add(play);
     }
 
-    public void addActionListeners(NoteRecordSheetPanel recordSheetListener){
+    public void addActionListeners(ActionListener recordSheetListener){
         try{
             record.addActionListener(recordSheetListener);
             play.addActionListener(recordSheetListener);

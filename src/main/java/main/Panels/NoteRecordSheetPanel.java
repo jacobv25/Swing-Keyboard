@@ -1,6 +1,7 @@
 package main.Panels;
 
 import main.Buttons.DMS_Button;
+import main.Buttons.Keys.KeyboardKey;
 import main.DMS_RealtimePlayer;
 import org.jfugue.pattern.Pattern;
 import org.jfugue.theory.Note;
@@ -27,16 +28,22 @@ public class NoteRecordSheetPanel extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        DMS_Button button = (DMS_Button) e.getSource();
-        if(button.getText().equals("Record")) {
-            isRecording = !isRecording;
+        System.out.println("AP");
+        if(e.getSource() instanceof DMS_Button) {
+            DMS_Button button = (DMS_Button) e.getSource();
+            if (button.getText().equals("Record")) {
+                isRecording = !isRecording;
+            } else if (button.getText().equals("Play")) {
+                playRecordSheet();
+            } else {
+                throw new IllegalArgumentException("WIERD ERROR\n" +
+                        "THIS IS NOT SUPPOSED TO HAPPEN");
+            }
         }
-        else if (button.getText().equals("Play")) {
-            playRecordSheet();
-        }
-        else {
-            throw new IllegalArgumentException("WIERD ERROR\n" +
-                    "THIS IS NOT SUPPOSED TO HAPPEN");
+        else if (e.getSource() instanceof KeyboardKey) {
+            System.out.println("Keyboard key pressed.");
+            Note note = new Note((String)((KeyboardKey) e.getSource()).getClientProperty("text"));
+            recordNote(note);
         }
     }
 
@@ -50,7 +57,7 @@ public class NoteRecordSheetPanel extends JPanel implements ActionListener {
         }
     }
 
-    public void recordNote(Note note) {
+    private void recordNote(Note note) {
         if(isRecording)
             recordSheet.append(note.originalString + " ");
     }

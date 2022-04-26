@@ -1,7 +1,6 @@
 package main.Buttons.Keys;
 
 import main.DMS_RealtimePlayer;
-import main.Panels.NoteRecordSheetPanel;
 import org.jfugue.theory.Note;
 
 import javax.sound.midi.MidiUnavailableException;
@@ -12,20 +11,18 @@ import java.awt.event.ActionListener;
 
 public abstract class KeyboardKey extends JButton {
 
-    NoteRecordSheetPanel recordSheet;
-
-    public KeyboardKey(String key) throws MidiUnavailableException {
+    public KeyboardKey(String key) {
         setFont(new Font(".AppleSystemUIFont", 0,13));
         setText(key);
         setVerticalAlignment(TOP);
         setVerticalTextPosition(TOP);
         addActionListener();
+        putClientProperty("text", getText());
     }
 
     protected void playNote(ActionEvent event) throws MidiUnavailableException {
         Note note = new Note(getText());
         DMS_RealtimePlayer.getInstance().startNote(note);
-        recordSheet.recordNote(note);
     }
 
     protected void addActionListener(){
@@ -37,9 +34,5 @@ public abstract class KeyboardKey extends JButton {
                 ex.printStackTrace();
             }
         });
-    }
-
-    public void setRecordSheet(NoteRecordSheetPanel recordSheet) {
-        this.recordSheet = recordSheet;
     }
 }
