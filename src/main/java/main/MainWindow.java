@@ -1,5 +1,6 @@
 package main;
 
+import main.Panels.ChooseInstrumentMenu;
 import main.Panels.KeyBoardButtonsPanel;
 import main.Panels.KeyboardPanel;
 import main.Panels.NoteRecordSheetPanel;
@@ -17,6 +18,11 @@ public class MainWindow extends JFrame {
     NoteRecordSheetPanel noteRecordSheetPanel;
 
     public MainWindow() throws MidiUnavailableException {
+
+        JMenuBar menuBar = new JMenuBar();
+        setJMenuBar(menuBar);
+        menuBar.add(new ChooseInstrumentMenu());
+
         noteRecordSheetPanel = new NoteRecordSheetPanel();
         keyboardPanel = new KeyboardPanel();
         keyBoardButtonsPanel = new KeyBoardButtonsPanel();
