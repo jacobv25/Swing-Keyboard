@@ -3,6 +3,7 @@ package main.Panels;
 import main.Buttons.Keys.BlackKey;
 import main.Buttons.Keys.KeyboardKey;
 import main.Buttons.Keys.WhiteKey;
+import main.KeyFactory;
 
 import javax.sound.midi.MidiUnavailableException;
 import javax.swing.*;
@@ -34,17 +35,17 @@ public class KeyboardPanel extends JPanel {
     }
 
     public void init() throws MidiUnavailableException {
-        cKey = new WhiteKey("C");
-        cKey.addActionListener(recordSheetPanel);
-
-        cSharpKey = new BlackKey("C#");
-        cSharpKey.addActionListener(recordSheetPanel);
-
-        dKey = new WhiteKey("D");
-        dKey.addActionListener(recordSheetPanel);
-
-        dSharpKey = new BlackKey("D#");
-        dSharpKey.addActionListener(recordSheetPanel);
+//        cKey = new WhiteKey("C");
+//        cKey.addActionListener(recordSheetPanel);
+//
+//        cSharpKey = new BlackKey("C#");
+//        cSharpKey.addActionListener(recordSheetPanel);
+//
+//        dKey = new WhiteKey("D");
+//        dKey.addActionListener(recordSheetPanel);
+//
+//        dSharpKey = new BlackKey("D#");
+//        dSharpKey.addActionListener(recordSheetPanel);
 
         add(cKey);
         add(cSharpKey);
@@ -52,7 +53,7 @@ public class KeyboardPanel extends JPanel {
         add(dSharpKey);
     }
 
-    public void setRecordSheetPanel(ActionListener recordSheetPanel) {
+    public void addActionListener(ActionListener recordSheetPanel) {
         this.recordSheetPanel = recordSheetPanel;
     }
 }

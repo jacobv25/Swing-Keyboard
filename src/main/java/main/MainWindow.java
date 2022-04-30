@@ -33,7 +33,7 @@ public class MainWindow extends JFrame {
         add(keyBoardButtonsPanel, CENTER);
         add(noteRecordSheetPanel, NORTH);
         keyBoardButtonsPanel.addActionListeners(noteRecordSheetPanel);
-        keyboardPanel.setRecordSheetPanel(noteRecordSheetPanel);
+        keyboardPanel.addActionListener(noteRecordSheetPanel);
         keyboardPanel.init();
         setVisible(true);
         pack();
