@@ -1,6 +1,6 @@
 package main;
 
-import main.Panels.ChooseInstrumentMenu;
+import main.Menus.ChooseInstrumentMenu;
 import main.Panels.KeyBoardButtonsPanel;
 import main.Panels.KeyboardPanel;
 import main.Panels.NoteRecordSheetPanel;

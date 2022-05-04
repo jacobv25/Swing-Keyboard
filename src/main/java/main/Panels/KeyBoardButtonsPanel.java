@@ -8,8 +8,8 @@ import java.awt.event.ActionListener;
 
 public class KeyBoardButtonsPanel extends JPanel {
 
-    DMS_Button record;
-    DMS_Button play;
+    private DMS_Button record;
+    private DMS_Button play;
 
     public KeyBoardButtonsPanel(){
         record = new DMS_Button("Record");

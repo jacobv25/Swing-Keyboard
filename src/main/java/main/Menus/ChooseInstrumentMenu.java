@@ -1,9 +1,8 @@
-package main.Panels;
+package main.Menus;
 
 import javax.swing.*;
 
 public class ChooseInstrumentMenu extends JMenu {
-    private JMenuItem menuItem;
     private ButtonGroup buttonGroup;
     private JRadioButtonMenuItem radioButtonMenuItem;
     public ChooseInstrumentMenu(){

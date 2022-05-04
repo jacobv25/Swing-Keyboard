@@ -7,7 +7,6 @@ import javax.sound.midi.MidiUnavailableException;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public abstract class KeyboardKey extends JButton {
 
@@ -16,7 +15,7 @@ public abstract class KeyboardKey extends JButton {
         setText(key);
         setVerticalAlignment(TOP);
         setVerticalTextPosition(TOP);
-        addActionListener();
+        setUpPlayNoteWhenPressed();
         putClientProperty("text", getText());
     }
 
@@ -25,7 +24,7 @@ public abstract class KeyboardKey extends JButton {
         DMS_RealtimePlayer.getInstance().startNote(note);
     }
 
-    protected void addActionListener(){
+    protected void setUpPlayNoteWhenPressed(){
         addActionListener(e -> {
             try {
                 playNote(e);
