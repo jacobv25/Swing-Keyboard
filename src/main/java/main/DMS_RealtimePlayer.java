@@ -6,6 +6,9 @@ import org.jfugue.theory.Note;
 
 import javax.sound.midi.MidiUnavailableException;
 
+/**
+ * This class handles the playing of music sounds in realtime
+ */
 public class DMS_RealtimePlayer {
     private static DMS_RealtimePlayer instance;
     private static RealtimePlayer player;
