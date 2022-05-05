@@ -12,7 +12,7 @@ public class KeyboardPanel extends JPanel {
     private ActionListener recordSheetPanel;
 
     private String[] keys = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C6"};
-
+    private KeyboardKey[] keyboardKeys = new KeyboardKey[keys.length];
     public KeyboardPanel() {}
 
     public void init() throws MidiUnavailableException {
@@ -26,8 +26,13 @@ public class KeyboardPanel extends JPanel {
             }
             else { color = "White"; }
             keyObj = factory.createKeyboardKey(color, keyStr, recordSheetPanel  );
+            keyboardKeys[i] = keyObj;
             add(keyObj);
         }
+    }
+
+    public KeyboardKey[] getKeyboardKeys() {
+        return keyboardKeys;
     }
 
     public void addActionListener(ActionListener recordSheetPanel) {

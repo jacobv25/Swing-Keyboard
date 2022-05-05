@@ -16,12 +16,14 @@ public class MainWindow extends JFrame {
     KeyboardPanel keyboardPanel;
     KeyBoardButtonsPanel keyBoardButtonsPanel;
     NoteRecordSheetPanel noteRecordSheetPanel;
+    ChooseInstrumentMenu chooseInstrumentMenu;
 
     public MainWindow() throws MidiUnavailableException {
 
         JMenuBar menuBar = new JMenuBar();
         setJMenuBar(menuBar);
-        menuBar.add(new ChooseInstrumentMenu());
+        chooseInstrumentMenu = new ChooseInstrumentMenu();
+        menuBar.add(chooseInstrumentMenu);
 
         noteRecordSheetPanel = new NoteRecordSheetPanel();
         keyboardPanel = new KeyboardPanel();
@@ -35,6 +37,7 @@ public class MainWindow extends JFrame {
         keyBoardButtonsPanel.addActionListeners(noteRecordSheetPanel);
         keyboardPanel.addActionListener(noteRecordSheetPanel);
         keyboardPanel.init();
+        chooseInstrumentMenu.setItemListeners(keyboardPanel.getKeyboardKeys());
         setVisible(true);
         pack();
     }
