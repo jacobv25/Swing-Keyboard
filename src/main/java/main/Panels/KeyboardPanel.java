@@ -7,6 +7,9 @@ import javax.sound.midi.MidiUnavailableException;
 import javax.swing.*;
 import java.awt.event.ActionListener;
 
+/**
+ * This handles the building of a keyboard.
+ */
 public class KeyboardPanel extends JPanel {
 
     private ActionListener recordSheetPanel;
