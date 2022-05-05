@@ -9,17 +9,21 @@ public class ChooseInstrumentMenu extends JMenu {
     private JRadioButtonMenuItem fluteRadioButtonMenuItem;
     private JRadioButtonMenuItem guitarRadioButtonMenuItem;
     private ItemListener[] itemListeners;
+
     public ChooseInstrumentMenu(){
 
         setText("Choose Instrument");
         buttonGroup = new ButtonGroup();
+
         pianoRadioButtonMenuItem = new JRadioButtonMenuItem("Piano");
         pianoRadioButtonMenuItem.setSelected(true);
         buttonGroup.add(pianoRadioButtonMenuItem);
         add(pianoRadioButtonMenuItem);
+
         fluteRadioButtonMenuItem = new JRadioButtonMenuItem("Flute");
         buttonGroup.add(fluteRadioButtonMenuItem);
         add(fluteRadioButtonMenuItem);
+
         guitarRadioButtonMenuItem = new JRadioButtonMenuItem("Guitar");
         add(guitarRadioButtonMenuItem);
         buttonGroup.add(guitarRadioButtonMenuItem);

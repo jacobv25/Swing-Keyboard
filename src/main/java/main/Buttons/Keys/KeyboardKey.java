@@ -24,22 +24,31 @@ public abstract class KeyboardKey extends JButton implements ItemListener {
     }
 
     public void itemStateChanged(ItemEvent event){
-        System.out.println("event was heard");
         JRadioButtonMenuItem radioButton = (JRadioButtonMenuItem)event.getSource();
-        if (radioButton.getText()=="Piano"){
-            instrument = "Piano";
+        if (radioButton.getText() == "Piano") {
+            try {
+                DMS_RealtimePlayer.getInstance().changeInstrument("Piano");
+            } catch (MidiUnavailableException e) {
+                e.printStackTrace();
+            }
+
+        } else if (radioButton.getText() == "Guitar") {
+            try {
+                DMS_RealtimePlayer.getInstance().changeInstrument("Guitar");
+            } catch (MidiUnavailableException e) {
+                e.printStackTrace();
+            }
         }
-        else if (radioButton.getText()=="Flute"){
-            instrument = "Flute";
-            System.out.println("flute was selected");
-        }
-        else if (radioButton.getText()=="Guitar"){
-            instrument = "Guitar";
+        else if (radioButton.getText() == "Flute") {
+            try {
+                DMS_RealtimePlayer.getInstance().changeInstrument("Flute");
+            } catch (MidiUnavailableException e) {
+                e.printStackTrace();
+            }
         }
     }
     protected void playNote(ActionEvent event) throws MidiUnavailableException {
-        System.out.println(instrument);
-        Note note = new Note("I[" + instrument + "]" + getText());
+        Note note = new Note(getText());
         DMS_RealtimePlayer.getInstance().startNote(note);
     }
 

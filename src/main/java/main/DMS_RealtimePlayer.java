@@ -29,4 +29,8 @@ public class DMS_RealtimePlayer {
         player.play(pattern);
     }
 
+    public void changeInstrument(String instrument){
+        player.changeInstrument(instrument);
+    }
+
 }
