@@ -3,4 +3,4 @@
 
 ![Demo])(/src/main/resources/DMS_Demo.png)
 
-![UML Diagram](/src/main/resources/FinalProjectUML.png)
+![UML Diagram](/src/main/resources/DMS_Demo.png)
