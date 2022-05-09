@@ -34,8 +34,8 @@ public class MainWindow extends JFrame {
         add(keyboardPanel, SOUTH);
         add(keyBoardButtonsPanel, CENTER);
         add(noteRecordSheetPanel, NORTH);
-        keyBoardButtonsPanel.addActionListeners(noteRecordSheetPanel);
-        keyboardPanel.addActionListener(noteRecordSheetPanel);
+        keyBoardButtonsPanel.addActionListenersToRecordAndPlayButtons(noteRecordSheetPanel);
+        keyboardPanel.setActionListener(noteRecordSheetPanel);
         keyboardPanel.init();
         chooseInstrumentMenu.setItemListeners(keyboardPanel.getKeyboardKeys());
         setVisible(true);

@@ -3,7 +3,6 @@ package main.Panels;
 import main.Buttons.DMS_Button;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class KeyBoardButtonsPanel extends JPanel {
@@ -18,7 +17,7 @@ public class KeyBoardButtonsPanel extends JPanel {
         add(play);
     }
 
-    public void addActionListeners(ActionListener recordSheetListener){
+    public void addActionListenersToRecordAndPlayButtons(ActionListener recordSheetListener){
         try{
             record.addActionListener(recordSheetListener);
             play.addActionListener(recordSheetListener);

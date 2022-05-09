@@ -27,7 +27,9 @@ public class KeyboardPanel extends JPanel {
             if(keyStr.endsWith("#")){
                 color = "Black";
             }
-            else { color = "White"; }
+            else {
+                color = "White";
+            }
             keyObj = factory.createKeyboardKey(color, keyStr, recordSheetPanel  );
             keyboardKeys[i] = keyObj;
             add(keyObj);
@@ -38,7 +40,7 @@ public class KeyboardPanel extends JPanel {
         return keyboardKeys;
     }
 
-    public void addActionListener(ActionListener recordSheetPanel) {
+    public void setActionListener(ActionListener recordSheetPanel) {
         this.recordSheetPanel = recordSheetPanel;
     }
 }

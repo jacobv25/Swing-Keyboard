@@ -22,29 +22,47 @@ public class NoteRecordSheetPanel extends JPanel implements ActionListener {
         add(recordSheet);
     }
 
-    public JTextArea getRecordSheet() {
-        return recordSheet;
-    }
-
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println("AP");
-        if(e.getSource() instanceof DMS_Button) {
-            DMS_Button button = (DMS_Button) e.getSource();
-            if (button.getText().equals("Record")) {
-                isRecording = !isRecording;
-            } else if (button.getText().equals("Play")) {
-                playRecordSheet();
-            } else {
-                throw new IllegalArgumentException("WIERD ERROR\n" +
-                        "THIS IS NOT SUPPOSED TO HAPPEN");
-            }
+        if(isDMS_Button(e)) {
+            handleDMS_ButtonPress(e);
         }
-        else if (e.getSource() instanceof KeyboardKey) {
-            System.out.println("Keyboard key pressed.");
-            Note note = new Note((String)((KeyboardKey) e.getSource()).getClientProperty("text"));
-            recordNote(note);
+        else if (isKeyboardKey(e)) {
+            handleKeyboardKeyPress(e);
         }
+    }
+
+    private void handleKeyboardKeyPress(ActionEvent e) {
+        Note note = new Note((String)((KeyboardKey) e.getSource()).getClientProperty("text"));
+        recordNote(note);
+    }
+
+    private void handleDMS_ButtonPress(ActionEvent e) {
+        DMS_Button button = (DMS_Button) e.getSource();
+        if (isRecordButton(button)) {
+            isRecording = !isRecording;
+        } else if (isPlayButton(button)) {
+            playRecordSheet();
+        } else {
+            throw new IllegalArgumentException("WIERD ERROR\n" +
+                    "THIS IS NOT SUPPOSED TO HAPPEN");
+        }
+    }
+
+    private boolean isPlayButton(DMS_Button button) {
+        return button.getText().equals("Play");
+    }
+
+    private boolean isRecordButton(DMS_Button button) {
+        return button.getText().equals("Record");
+    }
+
+    private boolean isKeyboardKey(ActionEvent e) {
+        return e.getSource() instanceof KeyboardKey;
+    }
+
+    private boolean isDMS_Button(ActionEvent e) {
+        return e.getSource() instanceof DMS_Button;
     }
 
     private void playRecordSheet(){

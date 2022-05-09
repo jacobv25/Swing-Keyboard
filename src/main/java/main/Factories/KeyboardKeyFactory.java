@@ -12,11 +12,9 @@ public class KeyboardKeyFactory {
         KeyboardKey key;
         switch (colorDiscriminator){
             case "Black":
-                //create black key
                 key = new BlackKey(keyDiscriminator);
                 break;
             case "White":
-                //create white key
                 key = new WhiteKey(keyDiscriminator);
                 break;
             default:
