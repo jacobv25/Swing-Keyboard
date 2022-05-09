@@ -2,7 +2,7 @@
 ## Create Music with JFugue
 ### Demo
 ![Demo](/src/main/resources/DMS_Demo.png)
-### UML
+### System Design
 ![UML Diagram](/src/main/resources/FinalProjectUML.png)
 ### Singleton Pattern
 ![UML Diagram](/src/main/resources/SingletonDesign.png)
