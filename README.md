@@ -1,4 +1,4 @@
-# Desk-Music-Studio
+# Swing Keyboard (originally names Desk Music Studio)
 ## Create Music with JFugue
 ### Demo
 ![Demo](/src/main/resources/DMS_Demo.png)
